@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="styles.css" rel="stylesheet"/>
+
+    <title>Movie Reviews</title>
+</head>
+<body>
+    <!-- About company -->
+    <div class=" display-6 bg-dark  p-3 text-center text-light"><b>About Company</b></div>
+     <br>
+    <div class="display-7 bg-dark p- 8 text-center text-light"><b>Rotten Tomatoes</b></div>
+    <p class="bg-dark text-light"><p>
+    </p>Rotten Tomatoes is an American review-aggregation website for film and television. 
+        The company was launched in August 1998 by three undergraduate 
+        students at the University of California, Berkeley: Senh Duong, Patrick Y. 
+        Lee, and Stephen Wang</p>
+        <img src="Rotten_Tomatoes_homepage.png"  width="200" height="200"/>
+        <br>
+        <!-- Additional company information -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="display-7 bg-dark p-4 text-center justify-content-center text-light">
+                    <b>Additional Information:</b>
+                </div>
+                <div class="p-4 ">
+                    <p><b>Phone:</b> 123-456-789</p>
+                    <p><b>Email:</b> <a href="mailto:contact@imdb.com">contact@imdb.com</a></p>
+                    <p><b>Address:</b> Seattle, WA, USA</p>
+                </div>
+            </div>
+        </div>
+            <!-- contact form -->
+            <div class="display-7 bg-dark p-8 text-center text-light">
+                <b>Contact Form</b>
+            </div>
+            <form id="contactForm" action="#" method="post">
+                <div class="form-group">
+                    <label for="FirstName"><b>First Name</b>:</label>
+                    <input type="text" id="FirstName" name="FirstName" required>
+                    <span class="error-message" id="FirstNameError"></span>
+                    <br>
+                    <br>
+                    <label for="LastName"><b>Last Name</b>:</label>
+                    <input type="text" id="LastName" name="LastName" required>
+                    <span class="error-message" id="LastNameError"></span>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="email"><b>Email Address</b>:</label>
+                    <input type="email" id="email" name="email" required>
+                    <span class="error-message" id="emailError"></span>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="location"><b>Location (City)</b>:</label>
+                    <input type="text" id="location" name="location" required>
+                    <span class="error-message" id="locationError"></span>
+                </div>
+                <br>
+                <button type="submit"><b>Submit</b></button>
+            </form>
+            
+            <script>
+                document.getElementById("contactForm").addEventListener("submit", function (event) {
+                    var firstNameInput = document.getElementById("FirstName");
+                    var lastNameInput = document.getElementById("LastName");
+                    var firstNameValue = firstNameInput.value;
+                    var lastNameValue = lastNameInput.value;
+            
+                    if (!/^[a-zA-Z]+$/.test(firstNameValue)) {
+                        document.getElementById("FirstNameError").textContent = "Only alphabets are allowed in First Name.";
+                        event.preventDefault();
+                    } else {
+                        document.getElementById("FirstNameError").textContent = "";
+                    }
+            
+                    if (!/^[a-zA-Z]+$/.test(lastNameValue)) {
+                        document.getElementById("LastNameError").textContent = "Only alphabets are allowed in Last Name.";
+                        event.preventDefault();
+                    } else {
+                        document.getElementById("LastNameError").textContent = "";
+                    }
+                });
+                </script>
+    <!-- Footer -->
+    <footer class="bg-dark text-light text-center py-3">
+        No Copyrights - <a href="https://www.google.com" class="text-primary">Google Here</a>
+    </footer>
+        
+</body>
+</html>
+
+
